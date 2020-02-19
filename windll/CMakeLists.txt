@@ -25,4 +25,6 @@ set_target_properties(libc PROPERTIES
 target_link_libraries(libc liba)
 
 add_executable(app app.c)
-
+if (UNIX)
+    target_link_libraries(app dl)
+endif (UNIX)
